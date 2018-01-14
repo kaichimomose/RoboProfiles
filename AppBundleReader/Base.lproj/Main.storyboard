@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cy0-C2-eiO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uAQ-oF-Yh7">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="robotcell" id="Llv-Wq-zUp">
@@ -45,9 +45,96 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2QB-TR-hAZ"/>
+                    <connections>
+                        <segue destination="hCb-oz-UP6" kind="show" id="GsU-wl-oVp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="364" y="62.518740629685162"/>
+        </scene>
+        <!--Show Robo Image View Controller-->
+        <scene sceneID="Ceq-Ju-bBF">
+            <objects>
+                <viewController storyboardIdentifier="ShowRoboImageViewController" id="hCb-oz-UP6" customClass="ShowRoboImageViewController" customModule="AppBundleReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FUo-b7-IVh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RYd-VX-f5g">
+                                <rect key="frame" x="67" y="187.5" width="240" height="292"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="292" id="HOl-xx-oxI"/>
+                                    <constraint firstAttribute="width" constant="240" id="Z3I-fM-cRf"/>
+                                </constraints>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNV-8P-qyl">
+                                <rect key="frame" x="166" y="121" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNk-oc-ozk">
+                                <rect key="frame" x="166" y="522" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFE-xG-vY2">
+                                <rect key="frame" x="29" y="586" width="316" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PNV-8P-qyl" firstAttribute="centerX" secondItem="FUo-b7-IVh" secondAttribute="centerX" id="Bgs-e6-Zhl"/>
+                            <constraint firstItem="PNV-8P-qyl" firstAttribute="top" secondItem="IVE-vc-CrH" secondAttribute="top" constant="57" id="D25-R9-06v"/>
+                            <constraint firstItem="OFE-xG-vY2" firstAttribute="centerX" secondItem="FUo-b7-IVh" secondAttribute="centerX" id="SmB-fG-pLj"/>
+                            <constraint firstItem="RYd-VX-f5g" firstAttribute="centerX" secondItem="FUo-b7-IVh" secondAttribute="centerX" id="TFz-Pi-75f"/>
+                            <constraint firstItem="gNk-oc-ozk" firstAttribute="centerX" secondItem="FUo-b7-IVh" secondAttribute="centerX" id="WjY-S6-3ny"/>
+                            <constraint firstItem="IVE-vc-CrH" firstAttribute="trailing" secondItem="OFE-xG-vY2" secondAttribute="trailing" constant="30" id="cjW-o4-rou"/>
+                            <constraint firstItem="RYd-VX-f5g" firstAttribute="centerY" secondItem="FUo-b7-IVh" secondAttribute="centerY" id="o2y-AF-TbV"/>
+                            <constraint firstItem="OFE-xG-vY2" firstAttribute="top" secondItem="gNk-oc-ozk" secondAttribute="bottom" constant="43" id="pat-LC-Mrx"/>
+                            <constraint firstItem="gNk-oc-ozk" firstAttribute="top" secondItem="RYd-VX-f5g" secondAttribute="bottom" constant="42.5" id="tby-MH-QIs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IVE-vc-CrH"/>
+                    </view>
+                    <connections>
+                        <outlet property="commentLabel" destination="OFE-xG-vY2" id="uec-Bl-1dl"/>
+                        <outlet property="nameLabel" destination="PNV-8P-qyl" id="1C9-ud-sTz"/>
+                        <outlet property="parsonalityLabel" destination="gNk-oc-ozk" id="SnD-Ch-ds7"/>
+                        <outlet property="robotImage" destination="RYd-VX-f5g" id="btM-6S-UjJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="23P-sg-jpX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1170.4000000000001" y="32.833583208395808"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FO5-rq-FPn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cy0-C2-eiO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KCe-YN-nKg">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wxe-N6-f2v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Js-xF-oTK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-372" y="63"/>
         </scene>
     </scenes>
 </document>

@@ -34,7 +34,11 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.robots.count
     }
@@ -43,10 +47,25 @@ extension ViewController: UITableViewDataSource {
         let row = indexPath.row
         let robot = self.robots[row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "robotcell", for: indexPath)
-        cell.textLabel?.text = robot.name + "   '\(robot.phrase)'"
+        cell.textLabel?.text = robot.name
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        let robot = self.robots[row]
+        let showRoboImageVC = storyboard?.instantiateViewController(withIdentifier: "ShowRoboImageViewController") as! ShowRoboImageViewController
+        showRoboImageVC.robot = robot
+        self.navigationController?.pushViewController(showRoboImageVC, animated: true)
+    }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let row = indexPath.row
+//        let robot = self.robots[row]
+//        let showRoboImageVC = storyboard?.instantiateViewController(withIdentifier: "ShowRoboImageViewController") as! ShowRoboImageViewController
+//        showRoboImageVC.robot = robot
+//        self.navigationController?.pushViewController(showRoboImageVC, animated: true)
+//    }
     
 }
 
